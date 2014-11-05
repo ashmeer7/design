@@ -1,0 +1,6 @@
+{% extends "page-base.j2" %}
+
+{% block nav %}
+  {% from "macros.j2" import render_vertical_nav with context %}
+  {{ render_vertical_nav(menu, 'main_nav') }}
+{% endblock nav %}

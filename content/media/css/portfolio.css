@@ -1,0 +1,34 @@
+.image-container {
+  width: 600px;
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  float: left;
+  z-index: 1;
+  background-color: #9E989E;
+  left: 0px;
+  top 0px;
+  width: 600px;
+  height: 100%;
+  opacity: 0;
+}
+
+.image-overlay:hover { 
+  visibility: visible;
+  opacity: .3;
+}
+
+p {
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+img {
+  width: 600px;
+}
+

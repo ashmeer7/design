@@ -1,0 +1,4 @@
+videoWidth: 640
+videoHeight: 480
+videoJS: js/videohandle.js
+videosource: media/videos/bunnyvideo.mp4

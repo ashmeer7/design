@@ -1,0 +1,19 @@
+{% extends "page-base.j2" %}
+
+{% block css %}
+  {{ super () }}
+  <link rel="stylesheet" href="{{ media_url('css/home.css') }}">
+{% endblock css%}
+
+
+{% block main %}
+  <div class="red .portfolio_navigation"> Red </div>
+  <div class="blue"> Blue </div>
+  <div class="green"> Green </div>
+  {% for item in menu %}
+    {% if item.name != "Home" %}
+      <div class="yellow portfolio_navigation"> {{ item.name }} </div>
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "nav-page-base.j2" %}
+
+{% block css %}
+  {{ super () }}
+  <link rel="stylesheet" href="{{ media_url('css/about.css') }}">
+{% endblock css%}
+
+{% block main %}
+  <img src="{{ media_url('images/originals/resume.png') }}">
+{% endblock %}
