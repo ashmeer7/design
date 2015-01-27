@@ -14,24 +14,23 @@ context:
     data:
         menu:
             -
-                name: Home
-                description: Home Page
-                css_class: home
-                type: page
-                url: /home/index.html
-                listable: false
-            -
-                name: Portfolio
-                description: Portfolio
-                css_class: portfolio
+                name: Editorials & People
+                description: Editorials & People
+                css_class: editorial
                 type: node
-                url: /portfolio/index.html
-          #  -
-          #     name: Blog
-          #     description: Blog
-          #     css_class: blog
-          #     type: node
-          #     url: blog
+                url: /editorial/index.html
+            -
+                name: Travel
+                description: Travel
+                css_class: travel
+                type: node
+                url: /travel/index.html
+            -
+                name: Graphic Design
+                description: Graphic Design
+                css_class: graphic_design
+                type: node
+                url: /graphic_design/index.html
             -
                 name: About
                 description: About

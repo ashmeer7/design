@@ -10,25 +10,39 @@
 </article>
 {% endmacro %}
 
-{% macro render_vertical_nav(menu, cls=None) -%}
+{% macro render_vertical_nav(menu, cls=None, meta, node) -%}
 <div id="nav-div">
+  <div id="nav-logo-container">
+    <img id="nav-logo" src="/media/images/originals/smalllogo.jpg">
+  </div>
   <ul>
     {% for item in menu -%}
       <li> 
-        <a href="{{ item.url }}"> {{ item.name }} </a>
+        <a href="{{ item.url }}"> 
+          <div class="nav-item-container">
+          {{ item.name }} 
+          </div>
+          {% if item.name == meta.title %}
+          {% for picnode in node.walk_resources_sorted_by_time() %}
+            {% refer to picnode.relative_path as apic %}
+            <a href="#{{ apic.anchorname}}"><img src= {{ apic.miniimage }} class="nav-thumbnail"> </a>
+          {% endfor %}
+          {% endif %}
+        </a>
       </li>
     {%- endfor %}
   </ul>
 </div>
+
 <!-- if should show -->
-<div id="nav-preview-div">
+<!-- <div id="nav-preview-div">
   <ul>
     {% for res in resource.node.walk_resources_sorted_by_time() %}
       {% refer to res.relative_path as pic %}
         <li> {{ pic.caption }}</li>
     {% endfor %}
   </ul>
-</div>
+</div> !-->
 {%- endmacro %}
 
 {% macro render_nav(menu, cls=None) -%}
@@ -60,11 +74,37 @@
 {%- endif %}
 {%- endmacro %}
 
-{% macro render_image(res, cls=None) -%}
-{% refer to res.relative_path as pic %}
-  <div class="image-container">
-    <div class="image-overlay"> <p>{{ pic.caption }} </p></div>
-    <img src="{{ pic.image }}">
-</div>
+{% macro render_images(res, cls=none) -%}
+  {% for image in res.walk_resources_sorted_by_time() %}
+
+  {% refer to image.relative_path as pic %}
+    <div class="image-background" style="background-color:{{ loop.cycle('black', 'white') }}">
+    <div class="image-container">
+
+      <a name="{{pic.anchorname}}" class="offset"></a>
+      <img class="portfolio-image" src="{{ pic.image }}">
+    </div>
+    </div>
+
+  {% endfor %}
+{% endmacro %}
+
+{% macro render_videos(res, cls=none) -%}
+  {% for image in res.walk_resources_sorted_by_time() %}
+
+  {% refer to image.relative_path as vid -%}
+    <div class="image-background" style="background-color:{{ loop.cycle('black', 'white') }}">
+    <div class="image-container">
+
+      <a name="{{vid.anchorname}}">
+        <video class="portfolio-video"> 
+          <source src="{{vid.video}}" type="video/mp4">>
+          Your browser does not support the video tag.
+        </video>
+      </a>
+    </div>
+    </div>
+
+  {% endfor %}
 {% endmacro %}
 

@@ -6,5 +6,18 @@
 {% endblock css%}
 
 {% block main %}
-  <img src="{{ media_url('images/originals/resume.png') }}">
+  <div id="about-content">
+  <div id="top-content">
+    <img id="about-image" src="{{ media_url('images/originals/about.jpg') }}">
+    <div id="about-text">  
+      {% block text %}
+      {% endblock text %}
+    </div>
+  </div>
+  <div id="bottom-content">
+    {% block accomplishments %}
+    {% endblock accomplishments %}
+  </div>
+  </div>
+
 {% endblock %}

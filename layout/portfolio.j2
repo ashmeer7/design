@@ -1,5 +1,5 @@
-{% extends "nav-page-base.j2" %}
-{% from "macros.j2" import render_image with context %}
+{% extends "portfolio-page-base.j2" %}
+{% from "macros.j2" import render_images with context %}
 
 {% block css %}
   {{ super () }}
@@ -7,10 +7,6 @@
 {% endblock css %}
 
 {% block main %}
-<ul>
-{% for res in resource.node.walk_resources_sorted_by_time() %}
-  {{ render_image(res) }}
-{% endfor %}
-</ul>
+{{ render_images(resource.node) }}
 
 {% endblock main %}

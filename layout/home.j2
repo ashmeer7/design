@@ -1,4 +1,4 @@
-{% extends "page-base.j2" %}
+{% extends "nav-page-base.j2" %}
 
 {% block css %}
   {{ super () }}
@@ -7,13 +7,8 @@
 
 
 {% block main %}
-  <div class="red .portfolio_navigation"> Red </div>
-  <div class="blue"> Blue </div>
-  <div class="green"> Green </div>
-  {% for item in menu %}
-    {% if item.name != "Home" %}
-      <div class="yellow portfolio_navigation"> {{ item.name }} </div>
-    {% endif %}
-  {% endfor %}
+  <div id="home-video-container">
+    <video id="home-video" src="{{ media_url('videos/fuufuDONE.mov')}}"> </video>
+  </div>
 
 {% endblock %}

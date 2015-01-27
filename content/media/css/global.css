@@ -1,21 +1,51 @@
-body {
-  background-color: black;
-}
-
 * {
   font-family: "Times New Roman", Times, serif;
 }
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 #main { 
+  width:100%;
+  height:100%;
+}
+
+#index {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
 }
 
 #main-content {
   float: left;
-  margin-left: 0px;
   margin-right: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
+  width: 100%;
 } 
+
+@-webkit-keyframes slide_from_left {
+  0% {
+    -webkit-transform: translateX(150%);
+  }
+  50% {
+    -webkit-transform: translateX(-85);
+  }
+  65% {
+    -webkit-transform: translateX(4%);
+  }
+  80&{
+    -webkit-transform: translateX(-4%);
+  }
+  95% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+
 
 #main-content ul{
   float: left;
@@ -28,19 +58,23 @@ body {
 
 
 #nav-div {
-  background-color: green;
   width: 200px;
   float: left;
+  padding-right: 60px;
+  position: fixed;
+  left: 0px;
+  z-index: 10;
 }
 
 #nav-div ul {
   list-style-type: none;
   margin-top: 0px;
   margin-bottom: 0px;
+  padding-left: 0px;
 }
 
 #nav-preview-div {
-  width: 200px;
+  width: 300px;
   float: left;
   background-color: red;
 }
@@ -53,5 +87,100 @@ body {
 }
 
 #nav-div ul li {
+  margin-bottom: 100px;
 
+}
+
+#nav-div .nav-item-container {
+  color: #666666;
+  height: 50px;
+  background-color: #999999;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  font-size: 19px;
+  postion: absolute;
+}
+
+#nav-logo {
+  width: 200px;
+  height: 200px;
+}
+
+#nav-logo-container {
+  height:200px;
+}
+
+.nav-thumbnail {
+  width: 25px;
+  height: 20px;
+  float: left;
+  border: 1px;
+  -webkit-animation-name: fade-in;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -animation-name: fade-in;
+  -animation-duration: 1s;
+  -animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes fade-in {
+     0% {
+       -webkit-transform:scale(0);
+       opacity:0.0
+      }
+      60%{
+        -webkit-transform: scale(1.1);
+      }
+      80%{
+        -webkit-transform: scale(0.9);
+        opacity: 1;
+       }
+      100%{
+        -webkit-transform: scale(1);
+        opacity: 1;
+      }
+}
+
+@keyframes fade-in {
+     0% {
+       transform:scale(0);
+       opacity:0.0
+      }
+      60%{
+        transform: scale(1.1);
+      }
+      80%{
+        transform: scale(0.9);
+        opacity: 1;
+       }
+      100%{
+        transform: scale(1);
+        opacity: 1;
+      }
+}
+
+
+a, u {
+  text-decoration: none;
+}
+
+#home-video {
+  margin-left: 250px;
+}
+
+#about-text {
+  max-width: 750px;
+}
+
+#home-video-container {
+  width: 100%;
+  background-color: black;
+  height: 100%;
+}
+
+a .offset {
+  position: relative;
+  text-decoration: blink;
+  padding-top: 100px;
 }

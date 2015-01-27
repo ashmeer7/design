@@ -14,7 +14,7 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="{{ resource.meta.compatibility }}">
 
-  <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
+  <title>{% block title %} Saad Amer Design {% endblock %}</title>
   <meta name="description" content="{{ resource.meta.description }}">
   <meta name="author" content="{{ resource.meta.author }}">
 
@@ -26,6 +26,8 @@
   <!--  <link rel="stylesheet" href="{{ media_url('css/site.css') }}"> -->
   <link rel="stylesheet" href="{{ media_url('css/global.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/portfolio.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/about.css') }}">
   {% endblock css %}
 
   {% block headjs %}
@@ -59,6 +61,7 @@
   <!-- <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script> -->
   <script src="{{ media_url('js/libs/jquery.smoothState.js') }}" ></script>
   <script src="{{ media_url('js/smoothInit.js') }}"></script>
+  <script src="{{ media_url('js/lazy-image-load.js') }}"></script>
   {% endblock jquery %}
 
   {% block scripts %}

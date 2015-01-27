@@ -1,0 +1,12 @@
+{% extends "portfolio-page-base.j2" %}
+{% from "macros.j2" import render_videos with context %}
+
+{% block css %}
+  {{ super () }}
+  <link rel="stylesheet" href="{{ media_url('css/portfolio.css') }}">
+{% endblock css %}
+
+{% block main %}
+{{ render_videos(resource.node) }}
+
+{% endblock main %}
