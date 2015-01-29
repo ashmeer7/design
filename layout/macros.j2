@@ -13,7 +13,9 @@
 {% macro render_vertical_nav(menu, cls=None, meta, node) -%}
 <div id="nav-div">
   <div id="nav-logo-container">
-    <img id="nav-logo" src="/media/images/originals/smalllogo.jpg">
+    <a href="/editorial/index.html">
+      <img id="nav-logo" src="/media/images/originals/smalllogo.jpg">
+    <a>
   </div>
   <ul>
     {% for item in menu -%}
