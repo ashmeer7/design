@@ -8,7 +8,7 @@
     //var video = $("#welcome-video");
     //video.get(0).play();
     image.click(function() {
-      window.location = "/index.html"});
+      window.location = "/editorial/index.html"});
     //we can do stuff here
   });
 }));

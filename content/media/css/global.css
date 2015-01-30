@@ -184,3 +184,33 @@ a .offset {
   text-decoration: blink;
   padding-top: 100px;
 }
+
+.modal_image_div {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom:0;
+  background: rgba(0,0,0,0.8);
+  opacity:0;
+  z-index:1000;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modal_image_div:target {
+  opacity:1;
+  pointer-events: auto;
+  overflow-y:  hidden;
+}
+
+.modal_image {
+  padding-top: 100px;
+  display: block;
+  margin-left:auto;
+  margin-right: auto;
+  width:800px
+}
+

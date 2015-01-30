@@ -27,12 +27,7 @@
   text-align: center;
 }
 
-.portfolio-image {
+.portfolio_image {
   display: block;
-}
-
-
-img {
   width: 600px;
 }
-

@@ -76,20 +76,21 @@
 {%- endif %}
 {%- endmacro %}
 
-{% macro render_images(res, cls=none) -%}
-  {% for image in res.walk_resources_sorted_by_time() %}
-
-  {% refer to image.relative_path as pic %}
+{%- macro render_images(res, cls=none) -%}
+  {%- for image in res.walk_resources_sorted_by_time() -%}
+  {%- refer to image.relative_path as pic -%}
     <div class="image-background" style="background-color:{{ loop.cycle('black', 'white') }}">
     <div class="image-container">
 
       <a name="{{pic.anchorname}}" class="offset"></a>
-      <img class="portfolio-image" src="{{ pic.image }}">
+         <a href="#{{pic.caption}}_lightbox">
+            <img class="portfolio_image" src="{{pic.image}}">
+         </a>
+         <div class="modal_image_div" id="{{pic.caption}}_lightbox"> <img class="modal_image" src="{{ pic.image }}"></div>
     </div>
     </div>
-
-  {% endfor %}
-{% endmacro %}
+  {%- endfor -%}
+{%- endmacro -%}
 
 {% macro render_videos(res, cls=none) -%}
   {% for image in res.walk_resources_sorted_by_time() %}
