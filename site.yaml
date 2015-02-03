@@ -19,24 +19,28 @@ context:
                 css_class: editorial
                 type: node
                 url: /editorial/index.html
+                nav_item: editorial
             -
                 name: Travel
                 description: Travel
                 css_class: travel
                 type: node
                 url: /travel/index.html
+                nav_item: travel
             -
                 name: Graphic Design
                 description: Graphic Design
                 css_class: graphic_design
                 type: node
                 url: /graphic_design/index.html
+                nav_item: graphic
             -
-                name: About
-                description: About
+                name: Biography
+                description: Biography
                 css_class: about
                 type: page
                 url: /about/index.html
+                nav_item: biography
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00

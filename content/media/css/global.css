@@ -93,8 +93,7 @@ html {
 
 #nav-div .nav-item-container {
   color: #666666;
-  height: 50px;
-  background-color: #999999;
+  height: 40px;
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
@@ -179,12 +178,6 @@ a, u {
   height: 100%;
 }
 
-a .offset {
-  position: relative;
-  text-decoration: blink;
-  padding-top: 100px;
-}
-
 .modal_image_div {
   position: fixed;
   top: 0;
@@ -207,10 +200,13 @@ a .offset {
 }
 
 .modal_image {
-  padding-top: 100px;
+  padding-top: 40px;
   display: block;
   margin-left:auto;
-  margin-right: auto;
-  width:800px
+  margin-right: auto; 
+  height: 85%;
 }
 
+.nav_image {
+  width:200px;
+}

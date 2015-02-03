@@ -22,7 +22,7 @@
       <li> 
         <a href="{{ item.url }}"> 
           <div class="nav-item-container">
-          {{ item.name }} 
+          <img class="nav_image" src="/media/images/navigation/{{ item.nav_item }}.png">
           </div>
           {% if item.name == meta.title %}
           {% for picnode in node.walk_resources_sorted_by_time() %}
@@ -86,7 +86,11 @@
          <a href="#{{pic.caption}}_lightbox">
             <img class="portfolio_image" src="{{pic.image}}">
          </a>
-         <div class="modal_image_div" id="{{pic.caption}}_lightbox"> <img class="modal_image" src="{{ pic.image }}"></div>
+          <div class="modal_image_div" id="{{pic.caption}}_lightbox"> 
+            <a href="#{{pic.caption}}">
+                <img class="modal_image" src="{{ pic.image }}">
+            </a>
+          </div>
     </div>
     </div>
   {%- endfor -%}
