@@ -77,22 +77,80 @@
 {%- endmacro %}
 
 {%- macro render_images(res, cls=none) -%}
-  {%- for image in res.walk_resources_sorted_by_time() -%}
-  {%- refer to image.relative_path as pic -%}
-    <div class="image-background" style="background-color:{{ loop.cycle('black', 'white') }}">
-    <div class="image-container">
+  {%- for next_pointer in res.walk_resources_sorted_by_time() %}
+  {%- set next_loop = loop %}
+  {%- for back_pointer in res.walk_resources_sorted_by_time() %}
+  {%- set back_loop = loop %}
 
-      <a name="{{pic.anchorname}}" class="offset"></a>
-         <a href="#{{pic.caption}}_lightbox">
+  {% refer to next_pointer.relative_path as next_pic %}
+  {% refer to back_pointer.relative_path as back_pic %}
+    {%- for image in res.walk_resources_sorted_by_time() -%}
+    {%- refer to image.relative_path as pic -%}
+    
+      {% if (next_loop.index == loop.index +1) and (back_loop.index == loop.index -1) %}
+        <div class="image-background" style="background-color:{{ loop.cycle('black', 'white') }}">
+          <div class="image-container">
+          <a name="{{pic.anchorname}}" class="offset"></a>
+          <a href="#{{pic.caption}}_lightbox">
             <img class="portfolio_image" src="{{pic.image}}">
-         </a>
-          <div class="modal_image_div" id="{{pic.caption}}_lightbox"> 
-            <a href="#{{pic.caption}}">
-                <img class="modal_image" src="{{ pic.image }}">
+          </a>
+
+                <div class="modal_image_div" id="{{pic.caption}}_lightbox"> 
+                    <a href="#{{back_pic.caption}}_lightbox">
+                      <span class="back_arrow"><</span>
+                    </a>
+                    <a href="#{{pic.caption}}">
+                      <img class="modal_image" src="{{ pic.image }}">
+                    </a>
+                    <a href="#{{next_pic.caption}}_lightbox">
+                      <span class="next_arrow">></span>
+                    </a>
+                </div>
             </a>
-          </div>
-    </div>
-    </div>
+        </div>
+      </div>
+      {% elif (next_loop.index == loop.index+1) and (loop.index0 == 0) and (back_loop.index0 == 0) %}
+        <div class="image-background" style="background-color:{{ loop.cycle('black', 'white') }}">
+          <div class="image-container">
+          <a name="{{pic.anchorname}}" class="offset"></a>
+          <a href="#{{pic.caption}}_lightbox">
+            <img class="portfolio_image" src="{{pic.image}}">
+          </a>
+
+                <div class="modal_image_div" id="{{pic.caption}}_lightbox"> 
+                    <a href="#{{pic.caption}}">
+                      <img class="modal_image" src="{{ pic.image }}">
+                    </a>
+                    <a href="#{{next_pic.caption}}_lightbox">
+                      <span class="next_arrow">></span>
+                    </a>
+                </div>
+            </a>
+        </div>
+      </div>
+      {% elif (next_loop.index == loop.index) and (loop.last) and (back_loop.revindex0 == 1)%}
+        <div class="image-background" style="background-color:{{ loop.cycle('black', 'white') }}">
+          <div class="image-container">
+          <a name="{{pic.anchorname}}" class="offset"></a>
+          <a href="#{{pic.caption}}_lightbox">
+            <img class="portfolio_image" src="{{pic.image}}">
+          </a>
+
+                <div class="modal_image_div" id="{{pic.caption}}_lightbox"> 
+                    <span class="back_arrow"><</span>
+                    <a href="#{{back_pic.caption}}">
+                      <img class="modal_image" src="{{ pic.image }}">
+                    </a>
+                    <a href="#{{next_pic.caption}}_lightbox">
+                    </a>
+                </div>
+            </a>
+        </div>
+      </div>
+
+      {% endif %}
+    {%- endfor -%}
+    {%- endfor %}
   {%- endfor -%}
 {%- endmacro -%}
 

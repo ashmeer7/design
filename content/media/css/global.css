@@ -205,8 +205,59 @@ a, u {
   margin-left:auto;
   margin-right: auto; 
   height: 85%;
+  max-width: 1000px;
 }
 
 .nav_image {
   width:200px;
 }
+
+.back_arrow {
+  position: absolute;
+  left: 130px;
+  top: 50%;
+  font-size: 60px;
+  color: white;
+  font-family: Consolas;
+  padding-bottom: 10px;
+}
+
+.back_arrow:hover {
+  color: black;
+  background-color: white;
+  border-radius: 80px;
+}
+
+
+
+.next_arrow {
+  position: absolute;
+  right: 130px;
+  top: 50%;
+  font-size: 60px;
+  color: white;
+  font-family: Consolas;
+  padding-bottom: 10px;
+}
+
+.next_arrow:hover {
+  color: black;
+  background-color: white;
+  border-radius: 80px;
+}
+.next_arrow {
+  position: absolute;
+  right: 130px;
+  top: 50%;
+  font-size: 60px;
+  color: white;
+  font-family: Consolas;
+  padding-bottom: 10px;
+}
+
+.next_arrow:hover {
+  color: black;
+  background-color: white;
+  border-radius: 80px;
+}
+
